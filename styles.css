@@ -31,8 +31,9 @@ h1{
     line-height: 25px;
 }
 p{
-    font-size: 25px;
-    line-height: 20px;
+    font-size: 29px;
+    padding: 10px;
+    line-height: 25px;
 }
 .container  input{
     border-radius: 7px;

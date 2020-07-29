@@ -3,21 +3,23 @@ const btn = document.getElementById('btn');
 const randNumber = ()=>{
     const colorText = document.getElementById('colorText');
     const shape = document.getElementById('shape');
-    const red = document.getElementById('red').value;
-    const green = document.getElementById('green').value;
-    const blue = document.getElementById('blue').value;
+    const inputRandNumber = document.getElementById('inputRandNumber').value;
     
-    if(red === '' || green === '' || blue === ''){
+    
+    if(inputRandNumber === ''){
         alert('Fill in the missing gaps')
-    }else if(red > 255 || green > 255 || blue > 255){
+    }else if(inputRandNumber > 255 ){
         alert('You just entered a number greater than 255, Enter number ranging from 0 to 255 ');
-    }else if(red < 0 || green <0 || blue < 0){
+    }else if(inputRandNumber < 0 ){
         alert('Enter numbers greater than 0 - 255');
     }
     else{
-        shape.style = `background: rgb(${red}, ${green}, ${blue});
+        const rand1 = Math.round(Math.floor(Math.random() * inputRandNumber));
+        const rand2 = Math.round(Math.floor(Math.random() * inputRandNumber));
+        const rand3 = Math.round(Math.floor(Math.random() * inputRandNumber));
+        shape.style = `background: rgb(${rand1}, ${rand2}, ${rand3});
                   transition: all 2s forwards 0.5s ease-in-out;`;
-        colorText.textContent = `rgb(${red}, ${green}, ${blue})`;
+        colorText.textContent = `rgb(${rand1}, ${rand2}, ${rand3})`;
         
     }
   
